@@ -1,0 +1,8 @@
+language: java
+
+addons:
+  sonarcloud:
+    organization: "floppylab"
+    
+script:
+  - mvn clean install # sonar:sonar
