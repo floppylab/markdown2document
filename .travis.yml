@@ -5,4 +5,4 @@ addons:
     organization: "floppylab"
     
 script:
-  - mvn clean install # sonar:sonar
+  - mvn clean install sonar:sonar
