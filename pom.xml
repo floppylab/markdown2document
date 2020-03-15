@@ -3,12 +3,12 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.floppylab</groupId>
-    <artifactId>markdown2documentation</artifactId>
+    <artifactId>markdown2document</artifactId>
     <packaging>jar</packaging>
     <version>1.0</version>
-    <name>markdown2documentation</name>
+    <name>markdown2document</name>
     <url>https://floppylab.com</url>
-    <description></description>
+    <description>Turn markdown files to a PDF or HTML document</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -123,7 +123,7 @@
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.floppylab.markdown2documentation.App</mainClass>
+                                    <mainClass>com.floppylab.markdown2document.App</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

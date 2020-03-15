@@ -1,4 +1,4 @@
-package com.floppylab.markdown2documentation;
+package com.floppylab.markdown2document;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

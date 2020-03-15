@@ -1,8 +1,7 @@
-package com.floppylab.markdown2documentation;
+package com.floppylab.markdown2document.domain;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.ToString;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
@@ -10,23 +9,34 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 @Getter
-@ToString
 @EqualsAndHashCode
-public class OutputFile {
+public class Output {
 
-    private ByteArrayOutputStream content;
+    private byte[] content;
 
-    public OutputFile(ByteArrayOutputStream content) {
+    public Output(byte[] content) {
         this.content = content;
+    }
+
+    /**
+     * Returns the content as a string.
+     *
+     * @return content string
+     */
+    public String toString() {
+        return new String(content);
     }
 
     /**
      * Returns the content as an OutputStream.
      *
      * @return output stream
+     * @throws IOException if a low-level I/O problem occurs
      */
-    public OutputStream toOutputStream() {
-        return content;
+    public OutputStream toOutputStream() throws IOException {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        byteArrayOutputStream.write(content);
+        return byteArrayOutputStream;
     }
 
     /**
@@ -37,7 +47,7 @@ public class OutputFile {
      */
     public void toFile(String name) throws IOException {
         try (OutputStream outputStream = new FileOutputStream(name)) {
-            content.writeTo(outputStream);
+            outputStream.write(content);
         }
     }
 
