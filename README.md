@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/floppylab/markdown2documentation.svg?branch=master)](https://travis-ci.org/floppylab/markdown2documentation) 
+[![Build Status](https://travis-ci.org/floppylab/markdown2document.svg?branch=master)](https://travis-ci.org/floppylab/markdown2document) 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENCE)
 
 # markdown2document
