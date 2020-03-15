@@ -104,5 +104,14 @@ Check the project on [GitHub](https://github.com/danfickle/openhtmltopdf).
 
 ## 3. Contribution
 
-Please see [CONTRIBUTING.md](CONTRIBUTING.md) file.
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) file for details.
 
+## 4. Postcards
+You're free to use this package, but if it makes it to your production environment we highly appreciate you sending us a postcard from your hometown, mentioning which of our project(s) you are using.
+
+Our address is: Gedőci utca 25., 3100 Salgótarján, Hungary.
+
+We publish all received postcards on our [website](https://floppylab.com).
+
+## 5. License
+The MIT License (MIT). Please see [LICENSE](LICENSE) file for more information.
