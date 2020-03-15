@@ -25,12 +25,11 @@ public class App {
                     .builder()
                     .markdownContents(Arrays.asList(
                             new Content("# Sample header \n sample content "),
-                            new Content(new URL("https://floppylab.com/text.md"))
+                            new Content(new URL("https://floppylab.com/projects/markdown2document/sample.md"))
                     ))
                     .styles(Arrays.asList(
-                            new Content("body { font-family: sans-serif; color: #555; /*huh*/ }"),
-                            // new Link("https://floppylab.com/base.css")
-                            new Link("https://www.paperie.io/api/organisations/50/css")
+                            new Content("body { font-family: sans-serif; color: #555; /* some comment*/ }"),
+                            new Link("https://floppylab.com/projects/markdown2document/sample.css")
                     )).build();
             PdfGenerator pdfGenerator = new PdfGenerator();
             Output output = pdfGenerator.generate(document);
