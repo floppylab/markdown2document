@@ -17,7 +17,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <lombok.version>1.18.8</lombok.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13</junit.version>
         <openhtml.version>1.0.2</openhtml.version>
         <commonmark.version>0.13.0</commonmark.version>
     </properties>
