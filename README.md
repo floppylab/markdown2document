@@ -76,7 +76,74 @@ An _Output_ object contains the contents of the generated document, and it has t
 
 ### 1.2. As a command line tool
 
-Coming soon.
+```
+java -jar markdown2document-1.0.0.jar -h
+
+java -jar markdown2document-1.0.0.jar -mc "# title","*italic text*" -pf "sample.pdf"
+```
+
+You can use it as a command line tool with the following options:
+
+#### Markdown options
+- markdown contents
+    - short: `mc`
+    - long: `markdown-contents`
+    - multiple values
+
+- markdown urls
+    - short: `mu`
+    - long: `markdown-urls`
+    - multiple values
+
+- markdown file paths
+    - short: `mp`
+    - long: `markdown-paths`
+    - multiple values
+
+#### Styling options
+- style links
+    - short: `sl`
+    - long: `style-links`
+    - multiple values
+
+- style contents
+    - short: `sc`
+    - long: `style-contents`
+    - multiple values
+
+- style urls
+    - short: `su`
+    - long: `style-urls`
+    - multiple values
+
+- style paths
+    - short: `sp`
+    - long: `style-paths`
+    - multiple values
+
+#### Base uri 
+- base uri
+    - short: `bu`
+    - long: `base-uri`
+
+#### Output options 
+- to pdf file with filename
+    - short: `pf`
+    - long: `to-pdf`
+
+- to html file with filename
+    - short: `hf`
+    - long: `to-html`
+
+- to html string
+    - short: `hs`
+    - long: `to-html-string`
+
+#### Help
+- help
+    - short: `h`
+    - long: `help`
+
 
 ## 2. Credits
 

@@ -56,7 +56,7 @@ public abstract class HtmlAssembler {
         String renderedDocument = renderer.render(parsedDocument);
         renderedDocument = "<html>"
                 + "<head>"
-                + formatStyles(styles)
+                + (styles != null ? formatStyles(styles) : "")
                 + "</head>"
                 + "<body>"
                 + renderedDocument
