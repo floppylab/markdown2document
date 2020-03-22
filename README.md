@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/floppylab/markdown2document.svg?branch=master)](https://travis-ci.org/floppylab/markdown2document) 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENCE)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=floppylab/markdown2document)](https://dependabot.com)
 
 # markdown2document
 
