@@ -24,11 +24,11 @@ Document document = Document
         .builder()
         .markdownContents(Arrays.asList(
                 new Content("# Sample header \n sample content "),
-                new Content(new URL("https://floppylab.com/projects/markdown2document/sample.md"))
+                new Content(new URL("https://floppylab.com/resources/markdown2document/sample.md"))
         ))
         .styles(Arrays.asList(
                 new Content("body { font-family: sans-serif; color: #555; /* some comment*/ }"),
-                new Link("https://floppylab.com/projects/markdown2document/sample.css")
+                new Link("https://floppylab.com/resources/markdown2document/sample.css")
         )).build();
 
 PdfGenerator pdfGenerator = new PdfGenerator();
