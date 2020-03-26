@@ -19,7 +19,7 @@ import org.apache.commons.cli.ParseException;
 
 import java.io.IOException;
 import java.net.URL;
-import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 @Log
@@ -120,7 +120,7 @@ public class CommandLineTool {
             if (cmd.hasOption("mp")) {
                 String[] markdownPathsValue = cmd.getOptionValue("mp").split(",");
                 for (String path : markdownPathsValue) {
-                    document.getMarkdownContents().add(new Content(Path.of(path)));
+                    document.getMarkdownContents().add(new Content(Paths.get(path)));
                 }
             }
 
@@ -142,7 +142,7 @@ public class CommandLineTool {
             if (cmd.hasOption("sp")) {
                 String[] stylePathsValue = cmd.getOptionValue("sp").split(",");
                 for (String path : stylePathsValue) {
-                    document.getStyles().add(new Content(Path.of(path)));
+                    document.getStyles().add(new Content(Paths.get(path)));
                 }
             }
 
