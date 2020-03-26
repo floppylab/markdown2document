@@ -9,10 +9,6 @@
         <property name="tabWidth" value="4"/>
         <module name="OuterTypeFilename"/>
         <module name="AvoidEscapedUnicodeCharacters"/>
-        <module name="LineLength">
-            <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
-            <property name="max" value="175"/>
-        </module>
         <module name="AvoidStarImport"/>
         <module name="UnusedImports"/>
         <module name="OneTopLevelClass"/>
@@ -110,13 +106,11 @@
             <property name="tagOrder" value="@param, @return, @throws, @deprecated"/>
         </module>
         <module name="JavadocMethod">
-            <property name="minLineCount" value="-1"/>
             <property name="allowedAnnotations" value="Override, Test, Bean"/>
             <property name="scope" value="public"/>
             <property name="allowMissingParamTags" value="false"/>
-            <property name="allowMissingThrowsTags" value="false"/>
+            <property name="validateThrows" value="true"/>
             <property name="allowMissingReturnTag" value="false"/>
-            <property name="allowMissingJavadoc" value="false"/>
             <property name="tokens" value="METHOD_DEF,ANNOTATION_FIELD_DEF"/>
         </module>
         <module name="EmptyCatchBlock"/>
@@ -126,6 +120,10 @@
             <property name="illegalPattern" value="true"/>
             <property name="message" value="Trailing whitespace"/>
         </module>
+    </module>
+    <module name="LineLength">
+        <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
+        <property name="max" value="175"/>
     </module>
     <module name="FileTabCharacter">
         <property name="eachLine" value="true"/>
