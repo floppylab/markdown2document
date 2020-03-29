@@ -25,7 +25,7 @@ public class PdfGenerator extends DocumentGenerator {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PdfRendererBuilder builder = new PdfRendererBuilder();
         builder.useFastMode();
-        String baseUri = document.getBaseUri() == null ? document.getBaseUri() : "";
+        String baseUri = document.getBaseUri() != null ? document.getBaseUri() : "";
         builder.withHtmlContent(content, baseUri);
         builder.toStream(byteArrayOutputStream);
         try {
