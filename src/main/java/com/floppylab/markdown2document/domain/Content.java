@@ -37,15 +37,17 @@ public class Content extends Input {
     }
 
     public Content(InputStream inputStream) throws IOException {
-        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-        BufferedReader reader = new BufferedReader(inputStreamReader);
-        StringBuilder sb = new StringBuilder();
-        String str;
-        while ((str = reader.readLine()) != null) {
-            sb.append(str);
-            sb.append("\n");
+        try (InputStreamReader inputStreamReader = new InputStreamReader(inputStream)) {
+            try (BufferedReader reader = new BufferedReader(inputStreamReader)) {
+                StringBuilder sb = new StringBuilder();
+                String str;
+                while ((str = reader.readLine()) != null) {
+                    sb.append(str);
+                    sb.append("\n");
+                }
+                this.content = sb.toString();
+            }
         }
-        this.content = sb.toString();
     }
 
 }
