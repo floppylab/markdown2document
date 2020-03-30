@@ -41,8 +41,10 @@ public class Content extends Input {
                 StringBuilder sb = new StringBuilder();
                 String str;
                 while ((str = reader.readLine()) != null) {
+                    if (sb.length() > 0) {
+                        sb.append("\n");
+                    }
                     sb.append(str);
-                    sb.append("\n");
                 }
                 this.content = sb.toString();
             }
