@@ -9,6 +9,7 @@ import com.openhtmltopdf.pdfboxout.PdfRendererBuilder;
 import lombok.extern.java.Log;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 
 @Log
 public class PdfGenerator extends DocumentGenerator {
@@ -25,16 +26,21 @@ public class PdfGenerator extends DocumentGenerator {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         PdfRendererBuilder builder = new PdfRendererBuilder();
         builder.useFastMode();
-        String baseUri = document.getBaseUri() == null ? document.getBaseUri() : "";
+        String baseUri = document.getBaseUri() != null ? document.getBaseUri() : "";
         builder.withHtmlContent(content, baseUri);
         builder.toStream(byteArrayOutputStream);
         try {
             builder.run();
+            return new Output(byteArrayOutputStream.toByteArray());
         } catch (Exception e) {
             throw new DocumentGeneratorException(e.getMessage());
+        } finally {
+            try {
+                byteArrayOutputStream.close();
+            } catch (IOException ex) {
+                log.warning("Could not close the stream");
+            }
         }
-        return new Output(byteArrayOutputStream.toByteArray());
     }
-
 
 }

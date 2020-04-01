@@ -13,7 +13,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Getter
 @ToString(callSuper = true)
@@ -33,19 +32,23 @@ public class Content extends Input {
 
     public Content(Path path, Charset charSet) throws IOException {
         List<String> lines = Files.readAllLines(path, charSet);
-        this.content = lines.stream().collect(Collectors.joining("\n"));
+        this.content = String.join("\n", lines);
     }
 
     public Content(InputStream inputStream) throws IOException {
-        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-        BufferedReader reader = new BufferedReader(inputStreamReader);
-        StringBuffer sb = new StringBuffer();
-        String str;
-        while ((str = reader.readLine()) != null) {
-            sb.append(str);
-            sb.append("\n");
+        try (InputStreamReader inputStreamReader = new InputStreamReader(inputStream)) {
+            try (BufferedReader reader = new BufferedReader(inputStreamReader)) {
+                StringBuilder sb = new StringBuilder();
+                String str;
+                while ((str = reader.readLine()) != null) {
+                    if (sb.length() > 0) {
+                        sb.append("\n");
+                    }
+                    sb.append(str);
+                }
+                this.content = sb.toString();
+            }
         }
-        this.content = sb.toString();
     }
 
 }
