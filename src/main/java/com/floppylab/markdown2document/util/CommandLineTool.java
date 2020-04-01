@@ -177,6 +177,9 @@ public class CommandLineTool {
             // processing
             log.info(document.toString());
             if (documentGenerator != null) {
+                if (document.getStyles().isEmpty()) {
+                    document.getStyles().add(Link.DEFAULT);
+                }
                 Output output = documentGenerator.generate(document);
                 if (fileName != null) {
                     output.toFile(fileName);
