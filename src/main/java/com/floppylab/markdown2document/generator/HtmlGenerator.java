@@ -17,6 +17,10 @@ public class HtmlGenerator extends DocumentGenerator {
             throw new DocumentIsNullException();
         }
 
+        if (isStyleMissing(document)) {
+            addDefaultStyle(document);
+        }
+
         String content = HtmlAssembler.assemble(document);
 
         return new Output(content.getBytes());

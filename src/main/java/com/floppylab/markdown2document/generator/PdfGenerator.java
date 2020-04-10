@@ -20,6 +20,9 @@ public class PdfGenerator extends DocumentGenerator {
         if (document == null) {
             throw new DocumentIsNullException();
         }
+        if (isStyleMissing(document)) {
+            addDefaultStyle(document);
+        }
 
         String content = HtmlAssembler.assemble(document);
 
