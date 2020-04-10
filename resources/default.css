@@ -1,1 +1,169 @@
-<!-- DEFAULT STYLE GOES HERE -->
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&display=swap&subset=latin-ext');
+
+body {
+    max-width: 100em;
+    margin: 0 auto;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    width: 100%;
+    padding: 2em !important;
+    color: #555;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 2em 0 1em;
+    line-height: 1.25;
+    font-weight: 400;
+    display: block;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+h2 {
+    font-size: 1.2em;
+    padding-bottom: 0.25em;
+    border-bottom: solid #b5d437 .25em;
+}
+
+h3 {
+    font-size: 1em;
+    padding-bottom: 0.25em;
+    border-bottom: solid #ffd03f .25em;
+}
+
+h4 {
+    font-size: .9em;
+}
+
+ul, ol {
+    margin: 1em 0;
+    padding-left: 4em;
+    display: block;
+}
+
+li {
+    display: list-item;
+}
+
+hr {
+    border: none;
+    height: 0.1em;
+    background: #555;
+}
+
+p {
+    font-size: 0.8em;
+    margin-bottom: 0.8em;
+    display: block;
+}
+
+img {
+    width: 100%;
+    max-width: 50em;
+    display: block;
+    margin: 1em auto;
+}
+
+blockquote {
+    display: block;
+    margin: 1.5em 0;
+}
+
+blockquote {
+    border-left: 0.4em solid #dddddd;
+    padding: 0 1.5em;
+    color: #777777;
+}
+
+blockquote > :first-child {
+    margin-top: 0;
+}
+
+blockquote > :last-child {
+    margin-bottom: 0;
+}
+
+a:visited, a:active, a:link {
+    text-decoration: none;
+    color: #555;
+    border-bottom: 0.2em #80c8bc solid;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #80c8bc !important;
+    background-color: rgba(128, 200, 188, .2);
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    display: table;
+    border-spacing: 0.2em;
+    border-color: grey;
+    width: 100%;
+    font-size: .8em;
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+th {
+    font-weight: 400;
+}
+
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+    padding: 0.7em 1em;
+    border: solid 0.1em #e5e5e5;
+    text-align: left;
+}
+
+th {
+    border-bottom-width: 0.2em;
+}
+
+pre {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0;
+}
+
+code {
+    font-family: monospace;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+del {
+    text-decoration: line-through;
+}
