@@ -139,5 +139,11 @@
                 </executions>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>resources</directory>
+                <targetPath>resources</targetPath>
+            </resource>
+        </resources>
     </build>
 </project>

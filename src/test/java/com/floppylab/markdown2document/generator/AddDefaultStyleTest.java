@@ -5,19 +5,18 @@
  */
 package com.floppylab.markdown2document.generator;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import com.floppylab.markdown2document.domain.Document;
 import com.floppylab.markdown2document.domain.Input;
-import com.floppylab.markdown2document.domain.Output;
 import com.floppylab.markdown2document.exception.DocumentGeneratorException;
-import com.floppylab.markdown2document.exception.DocumentIsNullException;
-import org.junit.Test;
 
-import static org.junit.Assert.assertNotNull;
+import org.junit.Test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertEquals;
 /**
  *
- * @author brave
+ * @author bravemaster619
  */
 public class AddDefaultStyleTest {
     
@@ -25,17 +24,17 @@ public class AddDefaultStyleTest {
     private final HtmlGenerator htmlGenerator = new HtmlGenerator();
     
     @Test
-    public void givenEmptyStyleOptionAddDefaultStyle() throws DocumentGeneratorException {
+    public void givenEmptyStyleOptionAddDefaultStyle() throws DocumentGeneratorException, IOException, URISyntaxException {
         // for pdf generator
         Document document = Document.builder().build();
         pdfGenerator.generate(document);
         assertFalse(document.getStyles().isEmpty());
-        assertEquals(Input.DEFAULT, document.getStyles().get(0));
+        assertEquals(Input.getDefault().getContent(), document.getStyles().get(0).getContent());
         // for html generator
         document = Document.builder().build();
         htmlGenerator.generate(document);
         assertFalse(document.getStyles().isEmpty());
-        assertEquals(Input.DEFAULT, document.getStyles().get(0));
+        assertEquals(Input.getDefault().getContent(), document.getStyles().get(0).getContent());
     }
     
 }
