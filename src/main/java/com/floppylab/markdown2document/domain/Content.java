@@ -2,20 +2,18 @@ package com.floppylab.markdown2document.domain;
 
 import lombok.Getter;
 import lombok.ToString;
+import lombok.extern.java.Log;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
-import lombok.extern.java.Log;
-import org.apache.commons.io.IOUtils;
 
 @Log
 @Getter
@@ -55,9 +53,4 @@ public class Content extends Input {
         }
     }
 
-    public static Content getDefault() throws IOException, URISyntaxException {
-        InputStream stream = Content.class.getClassLoader().getResourceAsStream("resources/default.css");
-        String content = IOUtils.toString(stream, StandardCharsets.UTF_8.toString());
-        return new Content(content);
-    }
 }
