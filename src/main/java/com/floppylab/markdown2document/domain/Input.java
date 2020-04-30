@@ -10,14 +10,18 @@ import java.nio.charset.StandardCharsets;
 
 @Getter
 @ToString
-public abstract class Input {
+public class Input {
 
     protected String content;
 
-    public static Content getDefault() throws IOException {
+    protected Input(String content) {
+        this.content = content;
+    }
+
+    public static Input getDefault() throws IOException {
         InputStream stream = Content.class.getClassLoader().getResourceAsStream("resources/default.css");
         String content = IOUtils.toString(stream, StandardCharsets.UTF_8.toString());
-        return new Content(content);
+        return new Input(content);
     }
 
 }

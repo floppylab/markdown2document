@@ -10,7 +10,7 @@ import lombok.extern.java.Log;
 public class Content extends Input {
 
     public Content(String content) {
-        this.content = content;
+        super(content);
     }
 
 }

@@ -1,6 +1,5 @@
 package com.floppylab.markdown2document.util;
 
-import com.floppylab.markdown2document.domain.Content;
 import com.floppylab.markdown2document.domain.Document;
 import com.floppylab.markdown2document.domain.Link;
 import com.floppylab.markdown2document.domain.Output;
@@ -106,7 +105,7 @@ public class CommandLineTool {
             if (cmd.hasOption("mc")) {
                 String[] markdownContentsValue = cmd.getOptionValue("mc").split(",");
                 for (String value : markdownContentsValue) {
-                    document.getMarkdownContents().add(new Content(value));
+                    document.getMarkdownContents().add(ContentFactory.getInstance().create(value));
                 }
             }
 
