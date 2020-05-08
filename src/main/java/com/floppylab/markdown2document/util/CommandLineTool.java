@@ -1,6 +1,5 @@
 package com.floppylab.markdown2document.util;
 
-import com.floppylab.markdown2document.domain.Content;
 import com.floppylab.markdown2document.domain.Document;
 import com.floppylab.markdown2document.domain.Link;
 import com.floppylab.markdown2document.domain.Output;
@@ -106,21 +105,21 @@ public class CommandLineTool {
             if (cmd.hasOption("mc")) {
                 String[] markdownContentsValue = cmd.getOptionValue("mc").split(",");
                 for (String value : markdownContentsValue) {
-                    document.getMarkdownContents().add(new Content(value));
+                    document.getMarkdownContents().add(ContentFactory.getInstance().create(value));
                 }
             }
 
             if (cmd.hasOption("mu")) {
                 String[] markdownUrlsValue = cmd.getOptionValue("mu").split(",");
                 for (String url : markdownUrlsValue) {
-                    document.getMarkdownContents().add(new Content(new URL(url)));
+                    document.getMarkdownContents().add(ContentFactory.getInstance().create(new URL(url)));
                 }
             }
 
             if (cmd.hasOption("mp")) {
                 String[] markdownPathsValue = cmd.getOptionValue("mp").split(",");
                 for (String path : markdownPathsValue) {
-                    document.getMarkdownContents().add(new Content(Paths.get(path)));
+                    document.getMarkdownContents().add(ContentFactory.getInstance().create(Paths.get(path)));
                 }
             }
 
@@ -128,21 +127,21 @@ public class CommandLineTool {
             if (cmd.hasOption("sc")) {
                 String[] styleContentsValue = cmd.getOptionValue("sc").split(",");
                 for (String value : styleContentsValue) {
-                    document.getStyles().add(new Content(value));
+                    document.getStyles().add(ContentFactory.getInstance().create(value));
                 }
             }
 
             if (cmd.hasOption("su")) {
                 String[] styleUrlsValue = cmd.getOptionValue("su").split(",");
                 for (String url : styleUrlsValue) {
-                    document.getStyles().add(new Content(new URL(url)));
+                    document.getStyles().add(ContentFactory.getInstance().create(new URL(url)));
                 }
             }
 
             if (cmd.hasOption("sp")) {
                 String[] stylePathsValue = cmd.getOptionValue("sp").split(",");
                 for (String path : stylePathsValue) {
-                    document.getStyles().add(new Content(Paths.get(path)));
+                    document.getStyles().add(ContentFactory.getInstance().create(Paths.get(path)));
                 }
             }
 

@@ -8,7 +8,7 @@ import lombok.ToString;
 public class Link extends Input {
 
     public Link(String link) {
-        this.content = link;
+        super(link);
     }
 
 }
