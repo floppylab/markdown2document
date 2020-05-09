@@ -1,14 +1,14 @@
 package com.floppylab.markdown2document.generator;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
 import com.floppylab.markdown2document.domain.Document;
 import com.floppylab.markdown2document.domain.Input;
 import com.floppylab.markdown2document.domain.Output;
 import com.floppylab.markdown2document.exception.DocumentGeneratorException;
 import lombok.extern.java.Log;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Log
 public abstract class DocumentGenerator {
@@ -35,8 +35,6 @@ public abstract class DocumentGenerator {
             inputs.add(Input.getDefault());
         } catch (IOException e) {
             log.warning("Couldn't find default stylesheet");
-        } catch (URISyntaxException e) {
-            log.warning("Invalid uri given");
         }
         document.setStyles(inputs);
         return document;
