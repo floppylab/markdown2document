@@ -21,14 +21,16 @@ Both have a `generate(Document document)` method which returns an `Output` objec
 Here is an example how to use is as a library:
 
 ``` java
+ContentFactory contentFactory = ContentFactory.getInstance();
+
 Document document = Document
         .builder()
         .markdownContents(Arrays.asList(
-                new Content("# Sample header \n sample content "),
-                new Content(new URL("https://floppylab.com/resources/markdown2document/sample.md"))
+                contentFactory.create("# Sample header \n sample content "),
+                contentFactory.create(new URL("https://floppylab.com/resources/markdown2document/sample.md"))
         ))
         .styles(Arrays.asList(
-                new Content("body { font-family: sans-serif; color: #555; /* some comment*/ }"),
+                contentFactory.create("body { font-family: sans-serif; color: #555; /* some comment*/ }"),
                 new Link("https://floppylab.com/resources/markdown2document/sample.css")
         )).build();
 
@@ -57,7 +59,10 @@ _Input_ is an abstract class and there are two classes that extend it:
 
 ##### 1.1.2.1. _Content_
 
-A `Content` object can be constructed from:
+A `Content` object can be constructed directly from:
+- `String` - as a text
+
+But also can be constructed by `ContentFactory` from:
 - `String` - as a text
 - `URL` - url where the content can be found
 - `Path` - path to file with optional `Charset`
