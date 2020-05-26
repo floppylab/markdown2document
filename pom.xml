@@ -18,7 +18,7 @@
 
         <lombok.version>1.18.12</lombok.version>
         <junit.version>4.13</junit.version>
-        <openhtml.version>1.0.2</openhtml.version>
+        <openhtml.version>1.0.3</openhtml.version>
         <commonmark.version>0.15.0</commonmark.version>
         <commons.cli.version>1.4</commons.cli.version>
     </properties>
