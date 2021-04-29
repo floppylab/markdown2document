@@ -1,0 +1,34 @@
+version: 2
+updates:
+- package-ecosystem: maven
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  assignees:
+  - leonorader
+  ignore:
+  - dependency-name: com.openhtmltopdf:openhtmltopdf-svg-support
+    versions:
+    - 1.0.6
+    - 1.0.7
+  - dependency-name: com.openhtmltopdf:openhtmltopdf-slf4j
+    versions:
+    - 1.0.6
+    - 1.0.7
+  - dependency-name: com.openhtmltopdf:openhtmltopdf-java2d
+    versions:
+    - 1.0.6
+    - 1.0.7
+  - dependency-name: com.openhtmltopdf:openhtmltopdf-pdfbox
+    versions:
+    - 1.0.6
+    - 1.0.7
+  - dependency-name: com.openhtmltopdf:openhtmltopdf-core
+    versions:
+    - 1.0.6
+    - 1.0.7
+  - dependency-name: org.projectlombok:lombok
+    versions:
+    - 1.18.18
